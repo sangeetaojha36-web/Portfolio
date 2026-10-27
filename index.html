@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,22 @@
     <meta property="og:title" content="Sangeeta Ojha — AI / ML & Software Developer">
     <meta property="og:description" content="Personal portfolio of Sangeeta Ojha, an AI/ML and software developer crafting intelligent systems, NLP tools, and human-centered digital experiences.">
     
+    <!-- Default Dark Mode Initialization (prevents flash of light mode) -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('sangeeta_theme');
+          if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+
     <!-- Fonts: Instrument Serif + Plus Jakarta Sans + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

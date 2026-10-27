@@ -13,9 +13,15 @@ import { ResumeModal } from './components/ResumeModal';
 import { ScrollProgress } from './components/ScrollProgress';
 
 export const App: React.FC = () => {
-  // Zainab Kabira's aesthetic default is warm architectural paper (false)
+  // Default theme is dark studio mode; users can toggle to warm paper light mode anytime
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    return localStorage.getItem('sangeeta_theme') === 'dark';
+    try {
+      const saved = localStorage.getItem('sangeeta_theme');
+      if (saved === 'light') return false;
+      return true; // default to dark
+    } catch {
+      return true;
+    }
   });
 
   const [isResumeOpen, setIsResumeOpen] = useState(false);
